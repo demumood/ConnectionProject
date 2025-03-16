@@ -6,8 +6,15 @@ namespace ConnectionProject
 {
     public class Program
     {
-
+        /// <summary>
+        /// The configuration 
+        /// </summary>
         private static IConfiguration? iconfiguration;
+
+        /// <summary>
+        /// The main program
+        /// </summary>
+        /// <param name="args">The arguments</param>
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -16,6 +23,9 @@ namespace ConnectionProject
 
         }
 
+        /// <summary>
+        /// Get the application settings setup
+        /// </summary>
         static void GetAppSettingsFile()
         {
             var builder = new ConfigurationBuilder()
@@ -25,11 +35,17 @@ namespace ConnectionProject
             iconfiguration = builder.Build();
         }
 
+        /// <summary>
+        /// Get the connection string
+        /// </summary>
         static void GetConnString()
         {
+            // Set up the class information
             var connInfo = new BAL.GetConnection(iconfiguration!);
+
+            // Get the connection string
             string conn = connInfo.DisplayConnString();
-            Console.WriteLine("connection string: " + conn); 
+            Console.WriteLine("connection string: " + conn);
         }
     }
 }

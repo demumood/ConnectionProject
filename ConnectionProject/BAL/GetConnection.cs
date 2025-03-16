@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace ConnectionProject.BAL
 {
+    /// <summary>
+    /// The Get connection class
+    /// </summary>
     public class GetConnection
     {
         // varibales for connection
